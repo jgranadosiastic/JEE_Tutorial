@@ -22,7 +22,7 @@ import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * SA_Java_Journals
+ * JEE Tutorial
  *
  * @author jose - 02.07.2016
  * @Title: JournalSubscription

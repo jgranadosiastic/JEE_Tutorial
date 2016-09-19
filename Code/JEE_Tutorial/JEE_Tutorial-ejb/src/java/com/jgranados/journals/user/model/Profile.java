@@ -19,7 +19,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * SA_Java_Journals
+ * JEE Tutorial
  *
  * @author jose - 02.07.2016
  * @Title: Profile

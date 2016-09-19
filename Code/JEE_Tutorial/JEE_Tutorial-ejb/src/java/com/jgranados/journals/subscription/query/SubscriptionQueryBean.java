@@ -18,7 +18,7 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 /**
- * HRMS_
+ * JEE Tutorial
  *
  * @author jose - 09.07.2016
  * @Title: SubscriptionQueryBean
@@ -32,7 +32,7 @@ public class SubscriptionQueryBean {
 	@EJB
 	private AuthenticationService authenticationService;
 
-	@PersistenceContext(unitName = "SA_Java_JournalsPU")
+	@PersistenceContext(unitName = "JEE_Tutorial-PU")
 	private EntityManager em;
 
 	public List<JournalSubscription> searchMySubscriptions(final String journalName, final Date subscriptionDateIni, final Date subscriptionDateEnd) {

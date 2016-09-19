@@ -24,7 +24,7 @@ import javax.persistence.criteria.Root;
 import javax.persistence.criteria.Subquery;
 
 /**
- * SA_Java_Journals
+ * JEE Tutorial
  *
  * @author jose - 02.07.2016
  * @Title: JournalQueryBean
@@ -35,7 +35,7 @@ import javax.persistence.criteria.Subquery;
 @Stateless
 public class JournalQueryBean {
 
-	@PersistenceContext(unitName = "SA_Java_JournalsPU")
+	@PersistenceContext(unitName = "JEE_Tutorial-PU")
 	private EntityManager em;
 
 	@EJB
@@ -73,13 +73,13 @@ public class JournalQueryBean {
 
 		if (name != null && !(name.isEmpty())) {
 			namePredicate = journalsBuilder.like(
-					journalsBuilder.upper(journalsRoot.get(Journal_.name)), "%" + name.toUpperCase() + "%");
+				   journalsBuilder.upper(journalsRoot.get(Journal_.name)), "%" + name.toUpperCase() + "%");
 			predicateList.add(namePredicate);
 		}
 
 		if (tags != null && !tags.isEmpty()) {
 			tagsPredicate = journalsBuilder.like(
-					journalsBuilder.upper(journalsRoot.get(Journal_.tags)), "%" + tags.toUpperCase() + "%");
+				   journalsBuilder.upper(journalsRoot.get(Journal_.tags)), "%" + tags.toUpperCase() + "%");
 			predicateList.add(tagsPredicate);
 		}
 
@@ -137,7 +137,7 @@ public class JournalQueryBean {
 
 		if (publicationDateIni != null && publicationDateEnd != null) {
 			publicationDatePredicate = journalPublicationsBuilder.between(
-					journalPublicationsRoot.get(JournalPublication_.publicationDate), publicationDateIni, publicationDateEnd);
+				   journalPublicationsRoot.get(JournalPublication_.publicationDate), publicationDateIni, publicationDateEnd);
 			predicateList.add(publicationDatePredicate);
 		}
 
@@ -183,13 +183,13 @@ public class JournalQueryBean {
 
 		if (name != null && !(name.isEmpty())) {
 			namePredicate = journalsBuilder.like(
-					journalsBuilder.upper(journalsRoot.get(Journal_.name)), "%" + name.toUpperCase() + "%");
+				   journalsBuilder.upper(journalsRoot.get(Journal_.name)), "%" + name.toUpperCase() + "%");
 			predicateList.add(namePredicate);
 		}
 
 		if (tags != null && !tags.isEmpty()) {
 			tagsPredicate = journalsBuilder.like(
-					journalsBuilder.upper(journalsRoot.get(Journal_.tags)), "%" + tags.toUpperCase() + "%");
+				   journalsBuilder.upper(journalsRoot.get(Journal_.tags)), "%" + tags.toUpperCase() + "%");
 			predicateList.add(tagsPredicate);
 		}
 

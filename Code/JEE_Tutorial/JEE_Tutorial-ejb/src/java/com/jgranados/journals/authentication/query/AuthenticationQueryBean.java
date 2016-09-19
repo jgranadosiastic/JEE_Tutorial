@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 /**
- * SA_Java_Journals
+ * JEE Tutorial
  *
  * @author jose - 04.07.2016
  * @Title: AuthenticationQueryBean

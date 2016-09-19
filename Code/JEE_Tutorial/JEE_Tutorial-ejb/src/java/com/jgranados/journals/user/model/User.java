@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- * SA_Java_Journals
+ * JEE Tutorial
  *
  * @author jose - 02.07.2016
  * @Title: User

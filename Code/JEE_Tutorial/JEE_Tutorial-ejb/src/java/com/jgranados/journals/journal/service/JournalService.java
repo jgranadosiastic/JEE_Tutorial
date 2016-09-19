@@ -18,7 +18,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- * SA_Java_Journals
+ * JEE Tutorial
  *
  * @author jose - 02.07.2016
  * @Title: JournalService
@@ -31,7 +31,7 @@ public class JournalService {
 
 	private static final Logger LOG = Logger.getLogger(JournalService.class.getName());
 
-	@PersistenceContext(unitName = "SA_Java_JournalsPU")
+	@PersistenceContext(unitName = "JEE_Tutorial-PU")
 	private EntityManager em;
 
 	@EJB

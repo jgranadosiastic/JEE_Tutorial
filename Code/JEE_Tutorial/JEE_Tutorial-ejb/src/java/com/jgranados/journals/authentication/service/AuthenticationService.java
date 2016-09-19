@@ -8,7 +8,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.SecurityContext;
 
 /**
- * SA_Java_Journals
+ * JEE Tutorial
  *
  * @author jose - 04.07.2016
  * @Title: AuthenticationService

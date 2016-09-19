@@ -11,7 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- * HRMS_
+ * JEE Tutorial
  *
  * @author jose - 13.07.2016
  * @Title: SubscriptionServiceBean
@@ -22,7 +22,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class SubscriptionServiceBean {
 
-	@PersistenceContext(unitName = "SA_Java_JournalsPU")
+	@PersistenceContext(unitName = "JEE_Tutorial-PU")
 	private EntityManager em;
 
 	@EJB
