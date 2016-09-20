@@ -2,10 +2,10 @@ package com.jgranados.journals.authentication.service;
 
 import com.jgranados.journals.authentication.query.AuthenticationQueryBean;
 import com.jgranados.journals.user.model.User;
+import javax.annotation.Resource;
 import javax.ejb.EJB;
+import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.SecurityContext;
 
 /**
  * JEE Tutorial
@@ -21,8 +21,8 @@ public class AuthenticationService {
 
 	@EJB
 	AuthenticationQueryBean authenticationQueryBean;
-	@Context
-	SecurityContext securityContext;
+	@Resource
+	SessionContext securityContext;
 
 	/**
 	 * Method to get the authenticated user using the securitycontext and the user
@@ -31,7 +31,7 @@ public class AuthenticationService {
 	 * @return
 	 */
 	public User getAuthenticatedUser() {
-		String userName = securityContext.getUserPrincipal().getName();
+		String userName = securityContext.getCallerPrincipal().getName();
 		return authenticationQueryBean.getUser(userName);
 	}
 
