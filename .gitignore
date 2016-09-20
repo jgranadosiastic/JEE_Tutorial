@@ -8,7 +8,15 @@
 *.war
 *.ear
 
+/Code/JEE_Tutorial/JEE_Tutorial-war/nbproject/genfiles.properties
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /Code/JEE_Tutorial/nbproject/private/
 /Code/JEE_Tutorial/JEE_Tutorial-war/nbproject/private/
+/Code/JEE_Tutorial/JEE_Tutorial-ejb/build/
+/Code/JEE_Tutorial/JEE_Tutorial-ejb/dist/
+/Code/JEE_Tutorial/dist/
+/Code/JEE_Tutorial/build/
+/Code/JEE_Tutorial/JEE_Tutorial-war/build/
+/Code/JEE_Tutorial/JEE_Tutorial-war/dist/
