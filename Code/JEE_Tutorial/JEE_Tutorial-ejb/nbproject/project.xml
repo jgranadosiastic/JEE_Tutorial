@@ -5,6 +5,8 @@
         <data xmlns="http://www.netbeans.org/ns/j2ee-ejbjarproject/3">
             <name>JEE_Tutorial-ejb</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
+            <included-library dirs="200">libs.Apache_Commons_IO_2.2.classpath</included-library>
+            <included-library dirs="200">libs.fileUploader-.classpath</included-library>
             <source-roots>
                 <root id="src.dir" name="Source Packages"/>
             </source-roots>

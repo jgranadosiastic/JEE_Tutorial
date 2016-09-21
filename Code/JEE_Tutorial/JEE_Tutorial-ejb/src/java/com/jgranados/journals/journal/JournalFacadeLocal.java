@@ -33,12 +33,16 @@ public interface JournalFacadeLocal {
 	public void deleteJournalPublication(Integer id);
 
 	public List<Journal> searchJournals(final String name, final String tags, final Integer ownerProfile, final Boolean active);
+	
+	public List<Journal> searchMyJournals(String name, String tags);
 
 	public Journal getJournalById(final int id);
 
 	public JournalPublication getJournalPublicationById(final int id);
 
 	public List<JournalPublication> searchJournalPublications(final Integer journal, final Date publicationDateIni, final Date publicationDateEnd, final Integer ownerProfile);
+	
+	public List<JournalPublication> searchMyJournalPublications(final Integer journal, final Date publicationDateIni, final Date publicationDateEnd);
 
 	public List<Journal> searchJournalsSubscriptionAvailable(final String name, final String tags, final Integer ownerProfile);
 

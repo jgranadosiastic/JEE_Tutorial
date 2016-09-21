@@ -26,6 +26,7 @@
 	</h:head>
 
 	<h:body>
+		<p:growl id="growl" showDetail="false" autoUpdate="true" />
 		<div class="container theme-showcase" role="main">
 			<!--<main-menu params="routerObj: routerObj, authModel: authModelObj"></main-menu>-->
 			<nav class="navbar navbar-default">
@@ -65,6 +66,16 @@
 			</nav>
 
 			<div id="page" class="container">
+				<p:confirmDialog global="true">
+					<div class="pull-right">
+						<p:commandLink styleClass="btn btn-success ui-confirmdialog-yes">
+							<span class="glyphicon glyphicon-ok-sign"></span> Yes
+						</p:commandLink>
+						<p:commandLink styleClass="btn btn-default ui-confirmdialog-no">
+							<span class="glyphicon glyphicon-remove"></span> No
+						</p:commandLink>
+					</div>
+				</p:confirmDialog>
 				<ui:insert name="content">
 					content
                     </ui:insert>

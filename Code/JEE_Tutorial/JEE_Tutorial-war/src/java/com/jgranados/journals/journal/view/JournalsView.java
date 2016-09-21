@@ -32,7 +32,7 @@ public class JournalsView implements Serializable {
 	String nameSearchCriteria;
 	String tagSearchCriteria;
 
-	//new or selected user
+	//new or selected journal
 	Journal currentJournal;
 
 	public List<Journal> getJournals() {
@@ -71,8 +71,7 @@ public class JournalsView implements Serializable {
 	}
 
 	public void searchJournals() {
-		setJournals(journalFacade.searchJournals(
-			   nameSearchCriteria, tagSearchCriteria, null, null));
+		setJournals(journalFacade.searchMyJournals(nameSearchCriteria, tagSearchCriteria));
 	}
 	
 	public void saveChanges(String modalIdToClose) {

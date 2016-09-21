@@ -1,5 +1,6 @@
 package com.jgranados.journals.journal;
 
+import com.jgranados.journals.authentication.service.AuthenticationService;
 import com.jgranados.journals.journal.model.Journal;
 import com.jgranados.journals.journal.model.JournalPublication;
 import com.jgranados.journals.journal.query.JournalQueryBean;
@@ -13,7 +14,8 @@ import javax.ejb.Stateless;
 
 /**
  * JEE_Tutorial-ejb
- * @author jose - 19.09.2016 
+ *
+ * @author jose - 19.09.2016
  * @Title: JournalFacade
  * @Description: description
  *
@@ -26,7 +28,9 @@ public class JournalFacade implements JournalFacadeLocal {
 	private JournalService journalService;
 	@EJB
 	private JournalQueryBean journalQueryBean;
-	
+	@EJB
+	private AuthenticationService authenticationService;
+
 	@Override
 	public Journal createJournal(Journal newJournal) {
 		return journalService.createJournal(newJournal);
@@ -44,12 +48,14 @@ public class JournalFacade implements JournalFacadeLocal {
 
 	@Override
 	public JournalPublication createJournalPublication(JournalPublication newJournalPublication, Integer idJournal, InputStream fileInputStream, String fileName) throws IOException {
-		return journalService.createJournalPublication(newJournalPublication, idJournal, fileInputStream, fileName);
+		return journalService.createJournalPublication(
+			   newJournalPublication, idJournal, fileInputStream, fileName);
 	}
 
 	@Override
 	public JournalPublication updateJournalPublication(JournalPublication journalPublicationValues, InputStream fileInputStream, String fileName) throws IOException {
-		return journalService.updateJournalPublication(journalPublicationValues, fileInputStream, fileName);
+		return journalService.updateJournalPublication(
+			   journalPublicationValues, fileInputStream, fileName);
 	}
 
 	@Override
@@ -60,6 +66,12 @@ public class JournalFacade implements JournalFacadeLocal {
 	@Override
 	public List<Journal> searchJournals(String name, String tags, Integer ownerProfile, Boolean active) {
 		return journalQueryBean.searchJournals(name, tags, ownerProfile, active);
+	}
+
+	@Override
+	public List<Journal> searchMyJournals(String name, String tags) {
+		return journalQueryBean.searchJournals(name, tags,
+			   authenticationService.getAuthenticatedUser().getProfile().getIdProfile(), null);
 	}
 
 	@Override
@@ -74,15 +86,20 @@ public class JournalFacade implements JournalFacadeLocal {
 
 	@Override
 	public List<JournalPublication> searchJournalPublications(Integer journal, Date publicationDateIni, Date publicationDateEnd, Integer ownerProfile) {
-		return journalQueryBean.searchJournalPublications(journal, publicationDateIni, publicationDateEnd, ownerProfile);
+		return journalQueryBean.searchJournalPublications(journal, publicationDateIni,
+			   publicationDateEnd, ownerProfile);
+	}
+
+	@Override
+	public List<JournalPublication> searchMyJournalPublications(Integer journal, Date publicationDateIni, Date publicationDateEnd) {
+		return journalQueryBean.searchJournalPublications(
+			   journal, publicationDateIni, publicationDateEnd,
+			   authenticationService.getAuthenticatedUser().getProfile().getIdProfile());
 	}
 
 	@Override
 	public List<Journal> searchJournalsSubscriptionAvailable(String name, String tags, Integer ownerProfile) {
 		return journalQueryBean.searchJournalsSubscriptionAvailable(name, tags, ownerProfile);
 	}
-
-	
-    
 
 }

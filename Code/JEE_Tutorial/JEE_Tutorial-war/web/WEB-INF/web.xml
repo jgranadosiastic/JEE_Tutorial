@@ -77,6 +77,19 @@
             <role-name>PUBLIC</role-name>
         </auth-constraint>
     </security-constraint>
+    <security-constraint>
+        <display-name>CommonSecured</display-name>
+        <web-resource-collection>
+            <web-resource-name>publications</web-resource-name>
+            <description/>
+            <url-pattern>/publications/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>PUBLISHER</role-name>
+            <role-name>PUBLIC</role-name>
+        </auth-constraint>
+    </security-constraint>
     <login-config>
         <auth-method>FORM</auth-method>
         <realm-name>jeetutorial-realm</realm-name>
