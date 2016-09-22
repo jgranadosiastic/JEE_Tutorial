@@ -9,21 +9,21 @@
 			 xmlns:f="http://xmlns.jcp.org/jsf/core">
 
 	<ui:define name="title">
-		Subscriptions
+		#{i18nLabels.Subscriptions}
 	</ui:define>
 
 	<ui:define name="content">
-		<h2>My Subscriptions
+		<h2>#{i18nLabels.MySubscriptions}
 			<p:commandLink styleClass="btn btn-success" onclick="PF('dlgSearchJournals').show();">
-				<span class="glyphicon glyphicon-heart"></span> Subscribe To...
+				<span class="glyphicon glyphicon-heart"></span> #{i18nLabels.SubscribeTo}...
 			</p:commandLink>
 		</h2>
 
 		<h:form id="publicationsSearch">
 			<fieldset>
-				<legend>Search</legend>
+				<legend>#{i18nLabels.Search}</legend>
 				<div class="row">
-					<label class="control-label col-sm-12">Between: </label>
+					<label class="control-label col-sm-12">#{i18nLabels.BetweenDates}: </label>
 				</div>
 				<div class="row">
 					<div class="form-group col-sm-3">

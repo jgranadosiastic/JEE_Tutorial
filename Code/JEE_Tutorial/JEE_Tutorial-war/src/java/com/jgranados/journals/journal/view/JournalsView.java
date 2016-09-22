@@ -2,7 +2,6 @@ package com.jgranados.journals.journal.view;
 
 import com.jgranados.journals.journal.JournalFacadeLocal;
 import com.jgranados.journals.journal.model.Journal;
-import com.jgranados.journals.user.model.User;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

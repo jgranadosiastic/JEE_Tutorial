@@ -1,6 +1,5 @@
 package com.jgranados.journals.subscription.view;
 
-import com.jgranados.journals.journal.model.Journal;
 import com.jgranados.journals.journal.view.JournalsView;
 import com.jgranados.journals.subscription.SubscriptionFacadeLocal;
 import com.jgranados.journals.subscription.model.JournalSubscription;

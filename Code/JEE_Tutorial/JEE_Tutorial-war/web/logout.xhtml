@@ -4,16 +4,15 @@
                 template="./templates/simple.xhtml">
 
 	<ui:define name="head-extras">
-		<meta http-equiv="refresh" content="5;URL=#{request.contextPath}/login.xhtml" />    
+		<meta http-equiv="refresh" content="2;URL=#{request.contextPath}/login.xhtml" />    
 	</ui:define>
 
 	<ui:define name="title">
-		Logout
+		#{i18nLabels.Logout}
 	</ui:define>
 
 	<ui:define name="content">
-		#{logoutView.logout()}
-		Closing Session...
+		#{i18nMsgs.closingsession}
 	</ui:define>
 
 </ui:composition>

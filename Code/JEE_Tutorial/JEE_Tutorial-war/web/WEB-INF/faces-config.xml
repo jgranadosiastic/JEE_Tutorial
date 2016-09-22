@@ -25,8 +25,12 @@
             <redirect/>
         </navigation-case>
         <navigation-case>
-		   <from-outcome>indexPUBLIC</from-outcome>
-            <from-outcome>subscriptions</from-outcome>
+		  <from-outcome>indexPUBLIC</from-outcome>
+            <to-view-id>/subscriptions/subscriptions</to-view-id>
+            <redirect/>
+        </navigation-case>
+	   <navigation-case>
+		  <from-outcome>subscriptions</from-outcome>
             <to-view-id>/subscriptions/subscriptions</to-view-id>
             <redirect/>
         </navigation-case>

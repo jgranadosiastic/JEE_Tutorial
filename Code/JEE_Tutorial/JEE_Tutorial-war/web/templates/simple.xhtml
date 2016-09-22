@@ -57,7 +57,10 @@
 						<ul class="nav navbar-nav navbar-right">
 							<li jsf:rendered="#{p:ifAnyGranted('PUBLISHER,PUBLIC')}">
 								<p class="navbar-text">#{i18nLabels.Signedinas} <span>#{sessionScope['USERNAME']}</span>, 
-									<p:link outcome="logout" styleClass="navbar-link" value="#{i18nLabels.Logout}"/>
+									<p:commandLink styleClass="navbar-link"
+												action="#{logoutView.logout()}"
+												value="#{i18nLabels.Logout}">
+									</p:commandLink>
 								</p>
 							</li>
 						</ul>
@@ -69,10 +72,10 @@
 				<p:confirmDialog global="true">
 					<div class="pull-right">
 						<p:commandLink styleClass="btn btn-success ui-confirmdialog-yes">
-							<span class="glyphicon glyphicon-ok-sign"></span> Yes
+							<span class="glyphicon glyphicon-ok-sign"></span> #{i18nLabels.Yes}
 						</p:commandLink>
 						<p:commandLink styleClass="btn btn-default ui-confirmdialog-no">
-							<span class="glyphicon glyphicon-remove"></span> No
+							<span class="glyphicon glyphicon-remove"></span> #{i18nLabels.No}
 						</p:commandLink>
 					</div>
 				</p:confirmDialog>

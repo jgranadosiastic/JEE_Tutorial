@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.jgranados.journals.login.view;
 
 import com.jgranados.journals.authentication.AuthenticationFacadeLocal;
@@ -20,7 +15,6 @@ import javax.inject.Named;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-import org.primefaces.context.RequestContext;
 
 /**
  * ClassRoom
@@ -107,6 +101,7 @@ public class LoginView implements Serializable {
 			}
 
 		} catch (ServletException ex) {// any exception
+			System.out.println("------------ex" +ex);
 			Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
 			MessagesUtil.addErrorMessage(
 				   MessagesUtil.getLocalizedMessage("loginfailed"));
@@ -118,6 +113,7 @@ public class LoginView implements Serializable {
 			}
 			return null;
 		} catch (Exception ex) {// any exception
+			System.out.println("------------ex" +ex);
 			Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
 			MessagesUtil.addErrorMessage(
 				   MessagesUtil.getLocalizedMessage("processingerror"));

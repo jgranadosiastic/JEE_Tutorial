@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.jgranados.journals.logout.view;
 
 import com.jgranados.journals.utils.MessagesUtil;
@@ -29,18 +23,22 @@ public class LogoutView {
     /**
      * Close the user session
      */
-    public void logout() {
+    public String logout() {
+	    System.out.println("----------------------logout");
         FacesContext context = FacesContext.getCurrentInstance();
         HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
         try {
             request.logout();
             request.getSession().invalidate();
+		  return "logout";
         } catch (ServletException ex) {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
+		  return null;
         } catch (Exception ex) {
             Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
             MessagesUtil.addErrorMessage(
                     MessagesUtil.getLocalizedMessage("processingerror"));
+		  return null;
         }
 
     }
