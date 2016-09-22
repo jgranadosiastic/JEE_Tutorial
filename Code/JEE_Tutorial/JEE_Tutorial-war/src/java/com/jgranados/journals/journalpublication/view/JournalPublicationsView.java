@@ -125,9 +125,11 @@ public class JournalPublicationsView implements Serializable {
 		try {
 			if (currentPublication.getIdJournalPublication() != null) {
 				journalFacade.updateJournalPublication(currentPublication,
-					   fileInputStream != null ? fileInputStream.getInputstream() : null,
-					   fileInputStream != null ? fileInputStream.getFileName() : null);
-				currentPublication.setFileName(fileInputStream.getFileName());
+					   fileInputStream != null && fileInputStream.getInputstream() != null ? fileInputStream.getInputstream() : null,
+					   fileInputStream != null && fileInputStream.getInputstream() != null ? fileInputStream.getFileName() : null);
+				if (fileInputStream != null && fileInputStream.getInputstream() != null) {
+					currentPublication.setFileName(fileInputStream.getFileName());
+				}
 				clearCurrentJournalPublication();
 				RequestContext.getCurrentInstance().execute("PF('" + modalIdToClose + "').hide()");
 			} else if (fileInputStream == null || fileInputStream.getInputstream() == null) {
@@ -153,6 +155,7 @@ public class JournalPublicationsView implements Serializable {
 		currentPublication = journalFacade.getJournalPublicationById(idPublication);
 		publications.remove(currentPublication);
 		journalFacade.deleteJournalPublication(idPublication);
+		clearCurrentJournalPublication();
 	}
 
 	public void clearCurrentJournalPublication() {

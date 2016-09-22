@@ -95,6 +95,7 @@ public class JournalsView implements Serializable {
 		currentJournal = journalFacade.getJournalById(idJournal);
 		journals.remove(currentJournal);
 		journalFacade.deleteJournal(idJournal);
+		clearCurrentJournal();
 	}
 	
 	public void clearCurrentJournal() {
