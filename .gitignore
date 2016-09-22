@@ -4,9 +4,6 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
-*.war
-*.ear
 
 /Code/JEE_Tutorial/JEE_Tutorial-war/nbproject/genfiles.properties
 /Code/JEE_Tutorial/JEE_Tutorial-ejb/nbproject/genfiles.properties
