@@ -164,7 +164,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES (1,'editor1','editor1@mail.com','NDeKorz3ClE6vsc+FXHn2NAhGag=','PUBLISHER',1),(2,'editor2','editor2@mail.com','NDeKorz3ClE6vsc+FXHn2NAhGag=','PUBLISHER',2),(3,'public1','public1@mail.com','NDeKorz3ClE6vsc+FXHn2NAhGag=','PUBLIC',3),(4,'public2','public2@mail.com','NDeKorz3ClE6vsc+FXHn2NAhGag=','PUBLIC',4);
+INSERT INTO `User` VALUES (1,'editor1','editor1@mail.com','jLIjfQZ5yojbZGTqxg2pY0VROWQ=','PUBLISHER',1),(2,'editor2','editor2@mail.com','jLIjfQZ5yojbZGTqxg2pY0VROWQ=','PUBLISHER',2),(3,'public1','public1@mail.com','jLIjfQZ5yojbZGTqxg2pY0VROWQ=','PUBLIC',3),(4,'public2','public2@mail.com','jLIjfQZ5yojbZGTqxg2pY0VROWQ=','PUBLIC',4);
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -177,4 +177,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-22 14:04:48
+-- Dump completed on 2016-09-22 17:55:32
