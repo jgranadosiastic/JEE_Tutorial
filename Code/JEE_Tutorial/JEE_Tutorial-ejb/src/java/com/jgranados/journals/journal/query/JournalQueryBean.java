@@ -83,7 +83,6 @@ public class JournalQueryBean {
 			predicateList.add(tagsPredicate);
 		}
 
-		//TODO check this
 		if (ownerProfile != null && ownerProfile > 0) {
 			ownerProfilePredicate = journalsBuilder.equal(journalsRoot.get(Journal_.ownerProfile), em.find(Profile.class, ownerProfile));
 			predicateList.add(ownerProfilePredicate);
@@ -141,7 +140,6 @@ public class JournalQueryBean {
 			predicateList.add(publicationDatePredicate);
 		}
 
-		//TODO check this
 		if (ownerProfile != null && ownerProfile > 0) {
 			ownerProfilePredicate = journalPublicationsBuilder.equal(journalPublicationsRoot.get(JournalPublication_.publisherProfile), em.find(Profile.class, ownerProfile));
 			predicateList.add(ownerProfilePredicate);

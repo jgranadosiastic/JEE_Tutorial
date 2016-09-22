@@ -35,6 +35,14 @@ public class JournalsView implements Serializable {
 	//new or selected journal
 	Journal currentJournal;
 
+	public JournalFacadeLocal getJournalFacade() {
+		return journalFacade;
+	}
+
+	public void setJournalFacade(JournalFacadeLocal journalFacade) {
+		this.journalFacade = journalFacade;
+	}
+
 	public List<Journal> getJournals() {
 		return journals;
 	}

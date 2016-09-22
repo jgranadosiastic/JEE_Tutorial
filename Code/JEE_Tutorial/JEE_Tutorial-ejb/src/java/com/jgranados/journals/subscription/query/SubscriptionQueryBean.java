@@ -34,6 +34,10 @@ public class SubscriptionQueryBean {
 
 	@PersistenceContext(unitName = "JEE_Tutorial-PU")
 	private EntityManager em;
+	
+	public JournalSubscription getJournalSubscriptionById(Integer idJournalSubscription) {
+		return em.find(JournalSubscription.class, idJournalSubscription);
+	}
 
 	public List<JournalSubscription> searchMySubscriptions(final String journalName, final Date subscriptionDateIni, final Date subscriptionDateEnd) {
 		CriteriaBuilder journalSubscriptionBuilder = em.getCriteriaBuilder();

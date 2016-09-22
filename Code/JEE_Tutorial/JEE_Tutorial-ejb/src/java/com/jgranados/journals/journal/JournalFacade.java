@@ -1,10 +1,12 @@
 package com.jgranados.journals.journal;
 
+import com.jgranados.journals.authentication.enums.RoleEnum;
 import com.jgranados.journals.authentication.service.AuthenticationService;
 import com.jgranados.journals.journal.model.Journal;
 import com.jgranados.journals.journal.model.JournalPublication;
 import com.jgranados.journals.journal.query.JournalQueryBean;
 import com.jgranados.journals.journal.service.JournalService;
+import com.jgranados.journals.user.model.User;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
@@ -64,14 +66,14 @@ public class JournalFacade implements JournalFacadeLocal {
 	}
 
 	@Override
-	public List<Journal> searchJournals(String name, String tags, Integer ownerProfile, Boolean active) {
-		return journalQueryBean.searchJournals(name, tags, ownerProfile, active);
-	}
-
-	@Override
 	public List<Journal> searchMyJournals(String name, String tags) {
-		return journalQueryBean.searchJournals(name, tags,
-			   authenticationService.getAuthenticatedUser().getProfile().getIdProfile(), null);
+		User user = authenticationService.getAuthenticatedUser();
+		Integer idProfile = user.getProfile().getIdProfile();
+		if (user.getUserRole().equals(RoleEnum.PUBLIC.toString())) {
+			return journalQueryBean.searchJournalsSubscriptionAvailable(name, tags, null);
+		} else {
+			return journalQueryBean.searchJournals(name, tags, idProfile, null);
+		}
 	}
 
 	@Override
@@ -85,21 +87,15 @@ public class JournalFacade implements JournalFacadeLocal {
 	}
 
 	@Override
-	public List<JournalPublication> searchJournalPublications(Integer journal, Date publicationDateIni, Date publicationDateEnd, Integer ownerProfile) {
-		return journalQueryBean.searchJournalPublications(journal, publicationDateIni,
-			   publicationDateEnd, ownerProfile);
-	}
-
-	@Override
 	public List<JournalPublication> searchMyJournalPublications(Integer journal, Date publicationDateIni, Date publicationDateEnd) {
+		User user = authenticationService.getAuthenticatedUser();
+		Integer idProfile = user.getProfile().getIdProfile();
+		if (user.getUserRole().equals(RoleEnum.PUBLIC.toString())) {
+			idProfile = null;
+		}
 		return journalQueryBean.searchJournalPublications(
-			   journal, publicationDateIni, publicationDateEnd,
-			   authenticationService.getAuthenticatedUser().getProfile().getIdProfile());
-	}
+			   journal, publicationDateIni, publicationDateEnd, idProfile);
 
-	@Override
-	public List<Journal> searchJournalsSubscriptionAvailable(String name, String tags, Integer ownerProfile) {
-		return journalQueryBean.searchJournalsSubscriptionAvailable(name, tags, ownerProfile);
 	}
 
 }

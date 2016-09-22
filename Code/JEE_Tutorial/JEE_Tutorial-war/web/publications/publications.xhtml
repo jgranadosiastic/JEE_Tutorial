@@ -31,10 +31,14 @@
 			<fieldset>
 				<legend>Search</legend>
 				<div class="row">
-					<div class="form-group col-sm-12">
-						<label class="control-label col-sm-12">Between: </label>
+					<label class="control-label col-sm-12">Between: </label>
+				</div>
+				<div class="row">
+					<div class="form-group col-sm-3">
 						<p:calendar value="#{journalPublicationsView.publicationDateStartSearchCriteria}"
 								  pt:placeholder="Publication date start"/>
+					</div>
+					<div class="form-group col-sm-3">
 						<p:calendar value="#{journalPublicationsView.publicationDateEndSearchCriteria}"
 								  pt:placeholder="Publication date end"/>
 					</div>
@@ -110,7 +114,7 @@
 			<p:dialog header="Publication" id="dlgEdit" widgetVar="dlgEdit"
 					fitViewport="true" modal="true" closeOnEscape="true">
 				<p:ajax event="close" listener="#{journalPublicationsView.clearCurrentJournalPublication()}" update="@this" />
-				<h:form class="form-horizontal" enctype="multipart/form-data">
+				<h:form enctype="multipart/form-data">
 					<div class="modal-body">
 						<fieldset>
 							<div class="form-group">
