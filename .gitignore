@@ -8,6 +8,9 @@
 /Code/JEE_Tutorial/JEE_Tutorial-war/nbproject/genfiles.properties
 /Code/JEE_Tutorial/JEE_Tutorial-ejb/nbproject/genfiles.properties
 
+/Code/JEE_Tutorial/JEE_Tutorial_base-war/nbproject/genfiles.properties
+/Code/JEE_Tutorial/JEE_Tutorial_base-ejb/nbproject/genfiles.properties
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /Code/JEE_Tutorial/nbproject/private/
@@ -18,3 +21,13 @@ hs_err_pid*
 /Code/JEE_Tutorial/build/
 /Code/JEE_Tutorial/JEE_Tutorial-war/build/
 /Code/JEE_Tutorial/JEE_Tutorial-war/dist/
+
+/Code/JEE_Tutorial_base/nbproject/private/
+/Code/JEE_Tutorial/JEE_Tutorial-war_base/nbproject/private/
+/Code/JEE_Tutorial_base/JEE_Tutorial_base-ejb/build/
+/Code/JEE_Tutorial_base/JEE_Tutorial_base-ejb/dist/
+/Code/JEE_Tutorial_base/dist/
+/Code/JEE_Tutorial_base/build/
+/Code/JEE_Tutorial_base/JEE_Tutorial_base-war/build/
+/Code/JEE_Tutorial_base/JEE_Tutorial_base-war/dist/
+
